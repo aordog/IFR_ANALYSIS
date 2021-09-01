@@ -109,7 +109,7 @@ def read_stations_excluded_from_master(file):
     return excl_stn, excl_lon, excl_lat
 
 
-def read_in_fitted_models(file):
+def read_in_fitted_models(file,UTCdiff):
     
     f = open(file)
     numline = 0
@@ -140,7 +140,7 @@ def read_in_fitted_models(file):
         STEC[i-27] = float(line.split()[7])
         TEC[i-27] = float(line.split()[7])*float(line.split()[9])
         RM[i-27] = float(line.split()[8])
-        t_hrs[i-27] = tstart+t[i-27]/3600.-7.
+        t_hrs[i-27] = tstart+t[i-27]/3600.-UTCdiff
         
     return TEC, STEC, RM, t_hrs
 
@@ -181,24 +181,24 @@ def read_in_fitted_models_UTC(file):
     return TEC, STEC, RM, t_hrs
 
 
-def read_in_fitted_models_CHIME(file):
+def read_in_fitted_models_CHIME(file,UTCdiff):
     
     f = open(file)
     numline = 0
     for line in f:
         numline = numline+1
-    print(numline)
+    #print(numline)
 
     f = open(file, 'r')
     for i in range(0,28):
         line = f.readline()
         if i == 6:
             reftime = line.split()
-    print(repr(line))
-    print(repr(reftime))
+    #print(repr(line))
+    #print(repr(reftime))
 
     tstart = float(reftime[8])+float(reftime[9])/60.+float(reftime[10])/3600.
-    print('')
+    #print('')
 
     t = np.empty([numline-29])
     el = np.empty([numline-29])
@@ -207,6 +207,7 @@ def read_in_fitted_models_CHIME(file):
     STEC = np.empty([numline-29])
     RM = np.empty([numline-29])
     t_hrs = np.empty([numline-29])
+    dSTEC = np.empty([numline-29])
 
     for i in range(29,numline):
         line = f.readline()
@@ -218,7 +219,8 @@ def read_in_fitted_models_CHIME(file):
             t[i-29] = line.split()[3]
             STEC[i-29] = float(line.split()[7])
             TEC[i-29] = float(line.split()[7])*float(line.split()[9])
+            dSTEC[i-29] = float(line.split()[10])
             RM[i-29] = float(line.split()[8])
-            t_hrs[i-29] = tstart+t[i-29]/3600.-7.
+            t_hrs[i-29] = tstart+t[i-29]/3600.-UTCdiff
         
-    return TEC, STEC, RM, t_hrs, el, az
+    return TEC, STEC, dSTEC, RM, t_hrs, el, az
