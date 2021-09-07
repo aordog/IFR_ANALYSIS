@@ -1,0 +1,74 @@
+%=SNX 2.01 IGS 21:098:73325 IGS 00:000:00000 00:000:00000 P 00000 0
++FILE/REFERENCE
+ DESCRIPTION        IGS Central Bureau
+ OUTPUT             historical sinex header file
+ CONTACT            cb@igs.org
+ SOFTWARE           SLM2SNX
+ HARDWARE           i686-Linux
+ INPUT              SiteLog Manager, igs14_2148.atx, antenna.gra
+-FILE/REFERENCE
++FILE/COMMENT
+ This file is generated daily from all current IGS site logs in
+    https://files.igscb.org/pub/station/log/
+ Phase center offsets are a function of antenna type, using as reference
+    https://files.igscb.org/pub/station/general/igs14.atx
+-FILE/COMMENT
++INPUT/ACKNOWLEDGMENTS
+ IGS International GNSS Service
+-INPUT/ACKNOWLEDGMENTS
++SITE/ID
+ albh  A 40129M003 P Victoria, Canada       236 30 45.4  48 23 23.3    32.0
+ bamf  A 40190M001 P Bamfield, Canada       234 51 53.7  48 50  7.1    11.1
+ brew  A 40473M001 P Brewster, United State 240 19  2.5  48  7 53.5   238.6
+ chwk  A 40142M001 P Chilliwack, Canada     237 59 29.8  49  9 23.8   170.0
+ drao  A 40105M002 P Penticton, Canada      240 22 30.0  49 19 21.4   542.0
+ prds  A 40124M001 P Calgary, Canada        245 42 23.4  50 52 16.7  1247.9
+ prds  A XXXXXXXXX P                        245 42 23.5  50 52 16.8  1248.4
+ albh  A XXXXXXXXX P                        236 30 45.2  48 23 23.2    32.1
+ bamf  A XXXXXXXXX P                        234 51 53.7  48 50 07.2    11.0
+ bcov  A XXXXXXXXX P                        233 09 26.6  50 32 39.4    37.5
+ chwk  A XXXXXXXXX P                        237 59 29.7  49 09 23.8   174.3
+ drao  A XXXXXXXXX P                        240 22 30.1  49 19 21.4   542.2
+ gldr  A XXXXXXXXX P                        233 52 21.7  49 40 53.3    -9.1
+ ptal  A XXXXXXXXX P                        235 08 20.6  49 15 22.8    93.0
+ sc04  A XXXXXXXXX P                        236 17 45.2  48 55 23.4    15.1
+ tfno  A XXXXXXXXX P                        234 05 31.8  49 09 14.9    -3.6
+ wslb  A XXXXXXXXX P                        237 04 43.8  50 07 35.5   909.7
+ lngb  A XXXXXXXXX P                        237 14 30.1  47 13 07.6     2.8
+ pabh  A XXXXXXXXX P                        235 47 43.6  47 12 46.1    13.3
+ p401  A XXXXXXXXX P                        235 26 34.8  47 56 13.9    36.5
+ cush  A XXXXXXXXX P                        236 46 48.3  47 25 24.0   217.4
+ p417  A XXXXXXXXX P                        236 42 07.5  46 34 29.0   102.8
+ thun  A XXXXXXXXX P                        237 42 41.6  47 06 21.0   142.9
+ p423  A XXXXXXXXX P                        237 03 31.7  47 17 16.4    40.3
+ p024  A XXXXXXXXX P                        244 09 27.3  47 33 43.9  1908.1
+ ephr  A XXXXXXXXX P                        240 27 19.2  47 19 45.6   375.8
+ glwd  A XXXXXXXXX P                        238 42 41.1  46 01 11.4   561.4
+ bdry  A XXXXXXXXX P                        242 39 00.3  48 59 12.1   602.2
+ hahd  A XXXXXXXXX P                        238 12 43.0  47 17 26.9   854.3
+ koot  A XXXXXXXXX P                        243 11 25.4  47 46 14.7   686.2
+ bigd  A XXXXXXXXX P                        241 00 40.3  47 55 59.8   493.7
+ lwck  A XXXXXXXXX P                        235 56 46.2  46 16 41.3    39.3
+ oylr  A XXXXXXXXX P                        237 47 42.9  47 28 28.7    25.0
+ pdtn  A XXXXXXXXX P                        241 14 35.1  45 39 57.4   394.9
+ qmar  A XXXXXXXXX P                        239 02 04.0  47 46 30.3   812.5
+ samm  A XXXXXXXXX P                        237 58 00.6  47 32 23.5     7.5
+ sprg  A XXXXXXXXX P                        242 01 28.9  47 18 35.5   601.0
+ ufda  A XXXXXXXXX P                        237 19 57.4  47 45 18.0    76.9
+ yaki  A XXXXXXXXX P                        239 29 41.8  46 36 17.9   324.2
+ yelm  A XXXXXXXXX P                        237 23 39.4  46 56 55.4    82.3
+ chcm  A XXXXXXXXX P                        237 13 26.9  48 00 38.2    20.7
+ anat  A XXXXXXXXX P                        242 51 52.5  46 07 58.3  1087.8
+ beli  A XXXXXXXXX P                        237 31 15.8  48 45 19.0    10.9
+ cath  A XXXXXXXXX P                        236 37 57.9  46 11 50.3    56.7
+ cncr  A XXXXXXXXX P                        238 15 02.6  48 32 19.3    56.0
+ crok  A XXXXXXXXX P                        237 05 14.9  46 16 28.5     1.5
+ chel  A XXXXXXXXX P                        240 00 36.4  47 49 53.6   345.9
+ lwst  A XXXXXXXXX P                        242 59 51.8  46 22 23.4   427.6
+ ocen  A XXXXXXXXX P                        235 50 25.1  46 57 08.5   -17.1
+ p414  A XXXXXXXXX P                        237 18 25.8  45 50 05.5    64.2
+ prsr  A XXXXXXXXX P                        240 12 33.0  46 12 56.4   198.1
+ rpub  A XXXXXXXXX P                        241 15 57.2  48 38 57.6   798.0
+ pdxa  A XXXXXXXXX P                        237 23 26.8  45 35 48.7    -4.6
+ lmid  A XXXXXXXXX P                        239 42 55.2  46 22 09.8   212.1
+ olar  A XXXXXXXXX P                        237 05 29.6  46 57 40.3    41.4
