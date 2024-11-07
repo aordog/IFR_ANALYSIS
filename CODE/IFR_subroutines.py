@@ -195,32 +195,43 @@ def read_in_fitted_models_CHIME(file,UTCdiff):
         if i == 6:
             reftime = line.split()
     #print(repr(line))
-    #print(repr(reftime))
+    print(repr(reftime))
 
     tstart = float(reftime[8])+float(reftime[9])/60.+float(reftime[10])/3600.
+    tstart_isot = str(reftime[5])+'-'+f"{int(reftime[6]):02}"+'-'+f"{int(reftime[7]):02}"+'T'+f"{int(reftime[8]):02}"+':'+f"{int(reftime[9]):02}"+':'+'{:04.1f}'.format(float(reftime[10]))
     #print('')
 
-    t = np.empty([numline-29])
-    el = np.empty([numline-29])
-    az = np.empty([numline-29])
-    TEC = np.empty([numline-29])
-    STEC = np.empty([numline-29])
-    RM = np.empty([numline-29])
-    t_hrs = np.empty([numline-29])
-    dSTEC = np.empty([numline-29])
+    t = []
+    el = []
+    az = []
+    TEC = []
+    STEC = []
+    RM = []
+    t_hrs = []
+    dSTEC = []
 
+    j = 0
     for i in range(29,numline):
         line = f.readline()
         #print(i,len(line))
         if len(line) > 5 :  # this could probably be anything greater than 2. Just looking for not blank line
             #print(i,line.split()[0])
-            el[i-29] = line.split()[5]
-            az[i-29] = line.split()[6]
-            t[i-29] = line.split()[3]
-            STEC[i-29] = float(line.split()[7])
-            TEC[i-29] = float(line.split()[7])*float(line.split()[9])
-            dSTEC[i-29] = float(line.split()[10])
-            RM[i-29] = float(line.split()[8])
-            t_hrs[i-29] = tstart+t[i-29]/3600.-UTCdiff
-        
-    return TEC, STEC, dSTEC, RM, t_hrs, el, az
+            el.append(float(line.split()[5]))
+            az.append(float(line.split()[6]))
+            t.append(float(line.split()[3]))
+            STEC.append(float(line.split()[7]))
+            TEC.append(float(line.split()[7])*float(line.split()[9]))
+            dSTEC.append(float(line.split()[10]))
+            RM.append(float(line.split()[8]))
+            t_hrs.append(tstart+t[j]/3600.)
+            j = j+1
+    
+    az = np.array(az, dtype = 'float')
+    el = np.array(el, dtype = 'float')
+    TEC = np.array(TEC, dtype = 'float')
+    STEC = np.array(STEC, dtype = 'float')
+    dSTEC = np.array(dSTEC, dtype = 'float')
+    RM = np.array(RM, dtype = 'float')
+    t_hrs = np.array(t_hrs, dtype = 'float')
+    
+    return TEC, STEC, dSTEC, RM, t_hrs, el, az, reftime, tstart_isot
